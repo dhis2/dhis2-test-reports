@@ -14,6 +14,16 @@
           "totalTime": 273.766,
           "timestamp": "2025-09-12T15:48:28.355670",
           "outputFile": "doris.json"
+        },
+        "postgres": {
+          "testSuites": 70,
+          "totalTests": 359,
+          "totalErrors": 0,
+          "totalFailures": 0,
+          "totalSkipped": 3,
+          "totalTime": 498.9339999999999,
+          "timestamp": "2025-09-12T21:26:26.314007",
+          "outputFile": "postgres.json"
         }
       }
     }
