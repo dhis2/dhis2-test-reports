@@ -1,0 +1,21 @@
+{
+  "version": "2.43-SNAPSHOT",
+  "builds": {
+    "2025-09-09_09-09-08_c281bd8": {
+      "buildTime": "2025-09-09T09:09:08.000",
+      "revision": "c281bd8",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 70,
+          "totalTests": 359,
+          "totalErrors": 5,
+          "totalFailures": 125,
+          "totalSkipped": 3,
+          "totalTime": 273.766,
+          "timestamp": "2025-09-12T15:40:25.296797",
+          "outputFile": "doris.json"
+        }
+      }
+    }
+  }
+}
