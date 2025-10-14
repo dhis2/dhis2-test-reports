@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHIS2 Test Reports Viewer</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>DHIS2 Test Reports</h1>
+    </header>
+
+    <div class="main-content">
+      <nav class="sidebar">
+        <div class="nav-header">Test Reports</div>
+        <div id="nav-content"></div>
+      </nav>
+
+      <main class="content-panel">
+        <div class="main-header">
+          <div class="summary-title" id="summaryTitle">Select a report to view</div>
+          <div class="summary-meta" id="summaryMeta"></div>
+        </div>
+        <div id="summaryContent">
+          <div class="loading">Select a component, test type, version, and build from the navigation to view test results.</div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="resources/js/main.js"></script>
+</body>
+</html>

@@ -130,7 +130,6 @@ Contains parsed test results from all `TEST-*.xml` files:
 
 ```
 ├── process-surefire-reports.py    # Python implementation  
-├── package.json                   # Node.js dependencies
 ├── surefire-reports/              # Input directory
 │   ├── system_info.json          # System information
 │   ├── TEST-*.xml                # Test result files
