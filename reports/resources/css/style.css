@@ -441,6 +441,43 @@ body {
   font-weight: 600;
 }
 
+/* Version graphs styles */
+.version-graphs-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.graph-container {
+  background: var(--card-background);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 500px;
+}
+
+.graph-chart-wrapper {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.graph-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.graph-canvas {
+  width: 100% !important;
+  height: 400px !important;
+  max-height: 400px !important;
+}
+
 /* Modal styles */
 .modal-overlay {
   position: fixed;
@@ -551,8 +588,16 @@ pre.code-block code {
   background-color: rgba(244, 67, 54, 0.1);
 }
 
+.test-case-row.skipped {
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
 .test-case-row.failed:hover {
   background-color: rgba(244, 67, 54, 0.2);
+}
+
+.test-case-row.skipped:hover {
+  background-color: rgba(255, 152, 0, 0.2);
 }
 
 .status-pass {
@@ -562,6 +607,11 @@ pre.code-block code {
 
 .status-fail {
   color: #f44336;
+  font-weight: 600;
+}
+
+.status-skipped {
+  color: #ff9800;
   font-weight: 600;
 }
 

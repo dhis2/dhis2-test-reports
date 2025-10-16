@@ -6,6 +6,7 @@ Repository of automated test results with a web-based viewer.
 
 - **Dynamic Report Discovery**: Automatically discovers test reports in the directory structure
 - **Interactive Navigation**: Tree-based navigation with URL routing for permalinks
+- **Version-Level Analytics**: Stacked area charts showing test statistics over time for each backend
 - **Backend Comparison**: Side-by-side comparison of different backends (Doris vs PostgreSQL)
 - **Detailed Test Analysis**: View individual test cases with pass/fail status and performance deltas
 - **Error Inspection**: Modal-based error viewing with syntax highlighting and navigation
@@ -33,9 +34,10 @@ The `manifest.json` file is automatically generated and contains only the locati
 
 1. Open `reports/index.html` in a web browser
 2. Navigate through the tree structure on the left
-3. Compare backend results in the main panel
-4. Click "Details" to view individual test cases
-5. Click on failed test cases to see error details
+3. Click on a version to see analytics graphs showing test statistics over time
+4. Use "View Individual Builds" to see specific build comparisons
+5. Click "Details" to view individual test cases
+6. Click on failed test cases to see error details
 
 ### Adding New Reports
 

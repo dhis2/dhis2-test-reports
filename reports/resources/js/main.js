@@ -173,7 +173,7 @@ class ReportViewer {
     }
   }
 
-  selectVersion(component, testType, version, builds) {
+  async selectVersion(component, testType, version, builds) {
     // Remove active class from version and build items
     document.querySelectorAll('.version-item, .build-item').forEach(item => {
       item.classList.remove('active');
@@ -183,8 +183,11 @@ class ReportViewer {
     const versionItem = document.querySelector(`[data-component="${component}"][data-test-type="${testType}"][data-version="${version}"]`);
     versionItem.classList.add('active');
     
-    // Show builds for this version
+    // Show builds for this version in the navigation panel
     this.showBuilds(component, testType, version, builds);
+    
+    // Show graphs in the main content area
+    await this.renderVersionGraphs(component, testType, version, builds);
     
     // Update URL
     this.updateURL(component, testType, version, null);
@@ -240,6 +243,256 @@ class ReportViewer {
       });
       
       buildList.appendChild(buildItem);
+    });
+  }
+
+  showVersionOverview(component, testType, version, builds) {
+    // Update header
+    this.summaryTitle.textContent = `Version: ${version}`;
+    this.summaryMeta.textContent = `${component} / ${testType}`;
+    
+    // Create version overview container
+    this.summaryContent.innerHTML = `
+      <div style="padding: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="margin: 0; color: var(--text-primary);">Version Overview</h3>
+          <button id="view-graphs-btn" style="
+            padding: 8px 16px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+          ">📊 View Analytics Graphs</button>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+          Select a build from the navigation panel to view detailed results, or click the button above to see analytics graphs.
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div style="background: var(--card-background); padding: 15px; border-radius: 6px;">
+            <h4 style="margin: 0 0 10px 0; color: var(--text-primary);">Available Builds</h4>
+            <p style="margin: 0; color: var(--text-secondary);">${Object.keys(builds).length} builds available</p>
+          </div>
+          <div style="background: var(--card-background); padding: 15px; border-radius: 6px;">
+            <h4 style="margin: 0 0 10px 0; color: var(--text-primary);">Backends</h4>
+            <p style="margin: 0; color: var(--text-secondary);">
+              ${Object.keys(builds).some(([, build]) => build.dbTypes.doris) ? 'Doris' : ''}
+              ${Object.keys(builds).some(([, build]) => build.dbTypes.doris) && Object.keys(builds).some(([, build]) => build.dbTypes.postgres) ? ', ' : ''}
+              ${Object.keys(builds).some(([, build]) => build.dbTypes.postgres) ? 'PostgreSQL' : ''}
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Add event listener for the view graphs button
+    document.getElementById('view-graphs-btn').addEventListener('click', () => {
+      this.renderVersionGraphs(component, testType, version, builds);
+    });
+  }
+
+  async renderVersionGraphs(component, testType, version, builds) {
+    // Update header
+    this.summaryTitle.textContent = `Version: ${version}`;
+    this.summaryMeta.textContent = `${component} / ${testType}`;
+    
+    // Create graphs container
+    this.summaryContent.innerHTML = `
+      <div class="version-graphs-container">
+        <div style="margin-bottom: 20px;">
+          <h3 style="margin: 0; color: var(--text-primary);">Build Statistics Over Time</h3>
+        </div>
+        <div class="graph-container">
+          <div class="graph-title">Doris Statistics</div>
+          <div class="graph-chart-wrapper">
+            <canvas id="doris-chart" class="graph-canvas"></canvas>
+          </div>
+        </div>
+        <div class="graph-container">
+          <div class="graph-title">PostgreSQL Statistics</div>
+          <div class="graph-chart-wrapper">
+            <canvas id="postgres-chart" class="graph-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Prepare data for charts
+    const sortedBuilds = Object.entries(builds).sort(([,a], [,b]) => {
+      return new Date(a.buildTime) - new Date(b.buildTime);
+    });
+    
+    const labels = sortedBuilds.map(([buildKey, buildData]) => {
+      const date = new Date(buildData.buildTime);
+      return date.toISOString().split('T')[0];
+    });
+    
+    // Create Doris chart
+    const dorisData = this.prepareChartData(sortedBuilds, 'doris');
+    this.createStackedAreaChart('doris-chart', 'Doris Statistics', labels, dorisData, sortedBuilds, component, testType, version);
+    
+    // Create PostgreSQL chart
+    const postgresData = this.prepareChartData(sortedBuilds, 'postgres');
+    this.createStackedAreaChart('postgres-chart', 'PostgreSQL Statistics', labels, postgresData, sortedBuilds, component, testType, version);
+  }
+
+  prepareChartData(sortedBuilds, backendType) {
+    const skipped = [];
+    const failures = [];
+    const errors = [];
+    const total = [];
+    
+    sortedBuilds.forEach(([buildKey, buildData]) => {
+      const backendData = buildData.dbTypes[backendType];
+      if (backendData) {
+        skipped.push(backendData.totalSkipped || 0);
+        failures.push(backendData.totalFailures || 0);
+        errors.push(backendData.totalErrors || 0);
+        total.push(backendData.totalTests || 0);
+      } else {
+        skipped.push(0);
+        failures.push(0);
+        errors.push(0);
+        total.push(0);
+      }
+    });
+    
+    return { skipped, failures, errors, total };
+  }
+
+  createStackedAreaChart(canvasId, title, labels, data, sortedBuilds, component, testType, version) {
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext('2d');
+    
+    // Destroy existing chart if it exists
+    if (window[`${canvasId}Chart`]) {
+      window[`${canvasId}Chart`].destroy();
+    }
+    
+    window[`${canvasId}Chart`] = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Skipped',
+            data: data.skipped,
+            backgroundColor: 'rgba(255, 193, 7, 0.3)',
+            borderColor: 'rgba(255, 193, 7, 1)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.1
+          },
+          {
+            label: 'Failures',
+            data: data.failures,
+            backgroundColor: 'rgba(244, 67, 54, 0.3)',
+            borderColor: 'rgba(244, 67, 54, 1)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.1
+          },
+          {
+            label: 'Errors',
+            data: data.errors,
+            backgroundColor: 'rgba(156, 39, 176, 0.3)',
+            borderColor: 'rgba(156, 39, 176, 1)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.1
+          },
+          {
+            label: 'Total Tests',
+            data: data.total,
+            backgroundColor: 'rgba(33, 150, 243, 0.3)',
+            borderColor: 'rgba(33, 150, 243, 1)',
+            borderWidth: 2,
+            fill: false,
+            tension: 0.1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        aspectRatio: undefined,
+        interaction: {
+          intersect: false,
+          mode: 'index'
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: title,
+            color: '#ffffff',
+            font: {
+              size: 16,
+              weight: 'bold'
+            }
+          },
+          legend: {
+            labels: {
+              color: '#ffffff',
+              usePointStyle: true,
+              padding: 20
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            titleColor: '#ffffff',
+            bodyColor: '#ffffff',
+            borderColor: '#333',
+            borderWidth: 1,
+            callbacks: {
+              afterBody: (context) => {
+                const dataIndex = context[0].dataIndex;
+                const backendType = canvasId.includes('doris') ? 'doris' : 'postgres';
+                const buildKey = sortedBuilds[dataIndex][0];
+                
+                return [
+                  '',
+                  'Click to view build details:',
+                  `Build: ${buildKey}`,
+                  `Backend: ${backendType}`
+                ];
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              color: 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: '#ffffff'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: '#ffffff'
+            }
+          }
+        },
+        onClick: (event, elements) => {
+          if (elements.length > 0) {
+            const element = elements[0];
+            const dataIndex = element.index;
+            const backendType = canvasId.includes('doris') ? 'doris' : 'postgres';
+            const buildKey = sortedBuilds[dataIndex][0];
+            
+            // Navigate to the build first, then to backend details (same as URL routing)
+            this.selectBuild(component, testType, version, buildKey).then(() => {
+              this.showBackendDetails(component, testType, version, buildKey, backendType);
+            });
+          }
+        }
+      }
     });
   }
 
@@ -364,6 +617,7 @@ class ReportViewer {
                 <option value="all">All</option>
                 <option value="pass">Pass</option>
                 <option value="fail">Fail</option>
+                <option value="skipped">Skipped</option>
               </select>
             </div>
             <div id="testCasesTable"></div>
@@ -399,7 +653,7 @@ class ReportViewer {
       button.addEventListener('click', (e) => {
         const backend = e.target.dataset.backend;
         const build = e.target.dataset.build;
-        this.showBackendDetails(backend, build);
+        this.showBackendDetails(this.currentPath.component, this.currentPath.testType, this.currentPath.version, build, backend);
       });
     });
     
@@ -412,18 +666,19 @@ class ReportViewer {
     }
   }
 
-  updateURL(component, testType, version, build) {
+  updateURL(component, testType, version, build, backend) {
     const params = new URLSearchParams();
     if (component) params.set('component', component);
     if (testType) params.set('testType', testType);
     if (version) params.set('version', version);
     if (build) params.set('build', build);
+    if (backend) params.set('backend', backend);
     
     const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
     window.history.pushState({}, '', newUrl);
     
     // Update current path
-    this.currentPath = { component, testType, version, build };
+    this.currentPath = { component, testType, version, build, backend };
   }
 
   handleURLChange() {
@@ -432,6 +687,7 @@ class ReportViewer {
     const testType = params.get('testType');
     const version = params.get('version');
     const build = params.get('build');
+    const backend = params.get('backend');
     
     if (component && testType) {
       // Find and click the test type to expand the tree
@@ -452,6 +708,13 @@ class ReportViewer {
                   const buildItem = document.querySelector(`[data-component="${component}"][data-test-type="${testType}"][data-version="${version}"][data-build="${build}"]`);
                   if (buildItem) {
                     buildItem.click();
+                    
+                    // If backend is specified, wait a bit and show backend details
+                    if (backend) {
+                      setTimeout(() => {
+                        this.showBackendDetails(component, testType, version, build, backend);
+                      }, 200);
+                    }
                   }
                 }, 100);
               }
@@ -470,9 +733,12 @@ class ReportViewer {
     this.summaryContent.innerHTML = `<div class="error">${message}</div>`;
   }
 
-  showBackendDetails(backendType, buildKey) {
+  showBackendDetails(component, testType, version, buildKey, backendType) {
     // Hide summary view and show detail view
-    document.querySelector('.summary-view').style.display = 'none';
+    const summaryView = document.querySelector('.summary-view');
+    if (summaryView) {
+      summaryView.style.display = 'none';
+    }
     document.getElementById('detailView').classList.add('active');
     
     // Update header with build info and backend type
@@ -481,7 +747,10 @@ class ReportViewer {
     const dateStr = date.toISOString().split('T')[0];
     const timeStr = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
     this.summaryTitle.textContent = `Build: ${dateStr} ${timeStr} • rev ${build.revision} - ${backendType} Details`;
-    this.summaryMeta.textContent = `${this.currentPath.component} / ${this.currentPath.testType} / ${this.currentPath.version}`;
+    this.summaryMeta.textContent = `${component} / ${testType} / ${version}`;
+    
+    // Update URL with backend parameter
+    this.updateURL(component, testType, version, buildKey, backendType);
     
     // Track current backend/build and load details
     this.currentBackendType = backendType;
@@ -493,6 +762,9 @@ class ReportViewer {
     // Hide detail view and show summary view
     document.getElementById('detailView').classList.remove('active');
     document.querySelector('.summary-view').style.display = 'block';
+    
+    // Update URL to remove backend parameter
+    this.updateURL(this.currentPath.component, this.currentPath.testType, this.currentPath.version, this.currentPath.build);
     
     // Reset header with build info as title
     const build = this.summary.builds[this.currentPath.build];
@@ -555,13 +827,29 @@ class ReportViewer {
             }
           }
 
+          // Determine test status
+          let status, statusClass, rowClass;
+          if (testCase.skipped) {
+            status = 'SKIPPED';
+            statusClass = 'status-skipped';
+            rowClass = 'test-case-row skipped';
+          } else if (testCase.failure) {
+            status = 'FAIL';
+            statusClass = 'status-fail';
+            rowClass = 'test-case-row failed';
+          } else {
+            status = 'PASS';
+            statusClass = 'status-pass';
+            rowClass = 'test-case-row';
+          }
+
           allTestCases.push({
             suiteName,
             testCase,
             suiteDisplay: suiteName.split('.').pop(),
-            status: testCase.failure ? 'FAIL' : 'PASS',
-            statusClass: testCase.failure ? 'status-fail' : 'status-pass',
-            rowClass: testCase.failure ? 'test-case-row failed' : 'test-case-row',
+            status,
+            statusClass,
+            rowClass,
             time: (typeof testCase.time === 'number') ? Number(testCase.time) : null,
             delta
           });
@@ -575,6 +863,8 @@ class ReportViewer {
       filteredTestCases = allTestCases.filter(tc => tc.status === 'PASS');
     } else if (this.currentFilter === 'fail') {
       filteredTestCases = allTestCases.filter(tc => tc.status === 'FAIL');
+    } else if (this.currentFilter === 'skipped') {
+      filteredTestCases = allTestCases.filter(tc => tc.status === 'SKIPPED');
     }
 
     // Apply sorting
@@ -632,7 +922,7 @@ class ReportViewer {
       const deltaDisplay = (delta === null) ? '' : `${delta >= 0 ? '▲' : '▼'} ${Math.abs(delta).toFixed(3)}`;
       const deltaClass = (delta === null) ? '' : (delta >= 0 ? 'delta-positive' : 'delta-negative');
       html += `
-        <tr class="${rowClass}" data-suite="${suiteName}" data-test="${testCase.name}" data-failure="${testCase.failure ? 'true' : 'false'}">
+        <tr class="${rowClass}" data-suite="${suiteName}" data-test="${testCase.name}" data-failure="${testCase.failure ? 'true' : 'false'}" data-skipped="${testCase.skipped ? 'true' : 'false'}">
           <td>${suiteDisplay}</td>
           <td>${testCase.name}</td>
           <td class="${statusClass}">${status}</td>
@@ -653,18 +943,19 @@ class ReportViewer {
   setupTableEventListeners() {
     // Add event listeners for test case rows
     const rows = Array.from(document.querySelectorAll('.test-case-row'));
-    this.errorRows = rows.filter(r => r.dataset.failure === 'true');
+    this.errorRows = rows.filter(r => r.dataset.failure === 'true' || r.dataset.skipped === 'true');
     rows.forEach(row => {
       row.addEventListener('click', () => {
         const suiteName = row.dataset.suite;
         const testName = row.dataset.test;
         
-        // On click: if failed, open modal with error; if passed, do nothing
+        // On click: if failed or skipped, open modal with error/skip message; if passed, do nothing
         const testCase = this.findTestCase(suiteName, testName);
-        if (testCase && testCase.failure) {
-          // set current index among error rows
+        if (testCase && (testCase.failure || testCase.skipped)) {
+          // set current index among error/skip rows
           this.currentErrorIndex = this.errorRows.findIndex(r => r.dataset.suite === suiteName && r.dataset.test === testName);
-          this.openErrorModal(suiteName, testName, testCase.failure);
+          const content = testCase.failure || testCase.skipped;
+          this.openErrorModal(suiteName, testName, content);
         }
       });
     });
@@ -756,19 +1047,36 @@ class ReportViewer {
     const suiteName = row.dataset.suite;
     const testName = row.dataset.test;
     const tc = this.findTestCase(suiteName, testName);
-    if (tc && tc.failure) this.updateModalContent(suiteName, testName, tc.failure);
+    if (tc && (tc.failure || tc.skipped)) {
+      const content = tc.failure || tc.skipped;
+      this.updateModalContent(suiteName, testName, content);
+    }
   }
 
-  updateModalContent(suiteName, testName, failure) {
-    if (!failure) return;
-    const title = `Error Details: ${suiteName.split('.').pop()} • ${testName}`;
+  updateModalContent(suiteName, testName, content) {
+    if (!content) return;
+    
+    // Determine if this is a failure or skip
+    const isSkipped = content.message && !content.type; // Skipped tests have message but no type
+    const title = isSkipped 
+      ? `Skip Details: ${suiteName.split('.').pop()} • ${testName}`
+      : `Error Details: ${suiteName.split('.').pop()} • ${testName}`;
+    
     if (this.modalTitle) this.modalTitle.textContent = title;
-    const details = [
-      `Type: ${failure.type || ''}`,
-      `Message: ${failure.message || ''}`,
-      '',
-      (failure.text || '')
-    ].join('\n');
+    
+    const details = isSkipped
+      ? [
+          `Reason: ${content.message || ''}`,
+          '',
+          'This test was skipped during execution.'
+        ].join('\n')
+      : [
+          `Type: ${content.type || ''}`,
+          `Message: ${content.message || ''}`,
+          '',
+          (content.text || '')
+        ].join('\n');
+        
     if (this.modalErrorContent) {
       this.modalErrorContent.innerHTML = '';
       const pre = document.createElement('pre');
