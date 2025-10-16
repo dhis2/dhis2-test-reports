@@ -31,7 +31,7 @@
       "buildTime": "2025-10-16T16:41:51.000",
       "revision": "3bfa4ac",
       "dbTypes": {
-        "postgres": {
+        "doris": {
           "testSuites": 71,
           "totalTests": 374,
           "totalErrors": 0,
@@ -39,7 +39,7 @@
           "totalSkipped": 26,
           "totalTime": 354.089,
           "timestamp": "2025-10-16T16:55:12.359935",
-          "outputFile": "postgres.json"
+          "outputFile": "doris.json"
         }
       }
     }

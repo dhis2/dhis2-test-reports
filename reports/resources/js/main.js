@@ -41,17 +41,12 @@ class ReportViewer {
 
   async initializeNavigation() {
     try {
-      // For now, hardcode the known structure
-      // In a real implementation, you'd fetch from a directory listing API
-      const structure = {
-        'core': {
-          'e2e-analytics': {
-            '243-snapshot': {
-              '2025-09-09_09-09-08_c281bd8': 'summary.json'
-            }
-          }
-        }
-      };
+      // Fetch the manifest file that contains the report structure
+      const response = await fetch('manifest.json');
+      if (!response.ok) {
+        throw new Error(`Failed to load manifest: ${response.status}`);
+      }
+      const structure = await response.json();
 
       this.renderNavigation(structure);
       
@@ -111,7 +106,7 @@ class ReportViewer {
     });
   }
 
-  selectTestType(component, testType, versions) {
+  async selectTestType(component, testType, versions) {
     // Remove active class from all items
     document.querySelectorAll('.test-type-item, .version-item, .build-item').forEach(item => {
       item.classList.remove('active');
@@ -122,13 +117,13 @@ class ReportViewer {
     testTypeItem.classList.add('active');
     
     // Show versions for this test type
-    this.showVersions(component, testType, versions);
+    await this.showVersions(component, testType, versions);
     
     // Update URL
     this.updateURL(component, testType, null, null);
   }
 
-  showVersions(component, testType, versions) {
+  async showVersions(component, testType, versions) {
     // Hide all version lists
     document.querySelectorAll('.version-list').forEach(list => {
       list.style.display = 'none';
@@ -147,21 +142,35 @@ class ReportViewer {
     versionList.innerHTML = '';
     versionList.style.display = 'block';
     
-    Object.entries(versions).forEach(([version, builds]) => {
-      const versionItem = document.createElement('li');
-      versionItem.className = 'version-item';
-      versionItem.textContent = version;
-      versionItem.dataset.component = component;
-      versionItem.dataset.testType = testType;
-      versionItem.dataset.version = version;
-      
-      versionItem.addEventListener('click', (e) => {
-        e.stopPropagation();
-        this.selectVersion(component, testType, version, builds);
-      });
-      
-      versionList.appendChild(versionItem);
-    });
+    // Load summary.json for each version to get build information
+    for (const [version, versionData] of Object.entries(versions)) {
+      if (versionData.summary) {
+        try {
+          const summaryPath = `${component}/${testType}/${version}/${versionData.summary}`;
+          const response = await fetch(summaryPath);
+          if (response.ok) {
+            const summary = await response.json();
+            const builds = summary.builds || {};
+            
+            const versionItem = document.createElement('li');
+            versionItem.className = 'version-item';
+            versionItem.textContent = version;
+            versionItem.dataset.component = component;
+            versionItem.dataset.testType = testType;
+            versionItem.dataset.version = version;
+            
+            versionItem.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.selectVersion(component, testType, version, builds);
+            });
+            
+            versionList.appendChild(versionItem);
+          }
+        } catch (error) {
+          console.error(`Error loading summary for ${component}/${testType}/${version}:`, error);
+        }
+      }
+    }
   }
 
   selectVersion(component, testType, version, builds) {
@@ -200,7 +209,12 @@ class ReportViewer {
     buildList.innerHTML = '';
     buildList.style.display = 'block';
     
-    Object.entries(builds).forEach(([buildKey, summaryFile]) => {
+    // Sort builds by build time (newest first)
+    const sortedBuilds = Object.entries(builds).sort(([,a], [,b]) => {
+      return new Date(b.buildTime) - new Date(a.buildTime);
+    });
+    
+    sortedBuilds.forEach(([buildKey, buildData]) => {
       const buildItem = document.createElement('li');
       buildItem.className = 'build-item';
       buildItem.dataset.component = component;
@@ -208,9 +222,8 @@ class ReportViewer {
       buildItem.dataset.version = version;
       buildItem.dataset.build = buildKey;
       
-      // Format build display
-      const build = { buildTime: buildKey.split('_')[0] + 'T' + buildKey.split('_')[1].replace(/-/g, ':'), revision: buildKey.split('_')[2] };
-      const date = new Date(build.buildTime);
+      // Format build display using data from summary.json
+      const date = new Date(buildData.buildTime);
       const dateStr = date.toISOString().split('T')[0];
       const timeStr = date.toLocaleTimeString('en-GB', {
         hour: '2-digit', minute: '2-digit', hour12: false
@@ -218,7 +231,7 @@ class ReportViewer {
       
       buildItem.innerHTML = `
         <div>${dateStr} ${timeStr}</div>
-        <small>rev ${build.revision}</small>
+        <small>rev ${buildData.revision}</small>
       `;
       
       buildItem.addEventListener('click', (e) => {
