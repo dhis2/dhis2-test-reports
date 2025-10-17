@@ -1079,6 +1079,11 @@ class ReportViewer {
         
     if (this.modalErrorContent) {
       this.modalErrorContent.innerHTML = '';
+      
+      // Create container for code block and copy button
+      const container = document.createElement('div');
+      container.className = 'code-block-container';
+      
       const pre = document.createElement('pre');
       pre.className = 'code-block';
       const code = document.createElement('code');
@@ -1086,7 +1091,52 @@ class ReportViewer {
       code.className = 'reasonml';
       code.textContent = details;
       pre.appendChild(code);
-      this.modalErrorContent.appendChild(pre);
+      
+      // Create copy button
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-button';
+      copyButton.innerHTML = '📋 Copy';
+      copyButton.title = 'Copy to clipboard';
+      
+      // Add copy functionality
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(details);
+          copyButton.innerHTML = '✅ Copied!';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.innerHTML = '📋 Copy';
+            copyButton.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = details;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            copyButton.innerHTML = '✅ Copied!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.innerHTML = '📋 Copy';
+              copyButton.classList.remove('copied');
+            }, 2000);
+          } catch (fallbackErr) {
+            console.error('Failed to copy text: ', fallbackErr);
+            copyButton.innerHTML = '❌ Failed';
+            setTimeout(() => {
+              copyButton.innerHTML = '📋 Copy';
+            }, 2000);
+          }
+          document.body.removeChild(textArea);
+        }
+      });
+      
+      container.appendChild(pre);
+      container.appendChild(copyButton);
+      this.modalErrorContent.appendChild(container);
+      
       if (window.hljs && typeof window.hljs.highlightElement === 'function') {
         window.hljs.highlightElement(code);
       }
