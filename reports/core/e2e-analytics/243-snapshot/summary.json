@@ -458,6 +458,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2025-12-05_14-42-28_aa5184f": {
+      "buildTime": "2025-12-05T14:42:28.000",
+      "revision": "aa5184f",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 73,
+          "totalTests": 407,
+          "totalErrors": 1,
+          "totalFailures": 48,
+          "totalSkipped": 27,
+          "totalTime": 423.14399999999995,
+          "timestamp": "2025-12-05T14:55:51.176095",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
