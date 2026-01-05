@@ -666,6 +666,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-01-05_16-05-39_bfa3107": {
+      "buildTime": "2026-01-05T16:05:39.000",
+      "revision": "bfa3107",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 74,
+          "totalTests": 415,
+          "totalErrors": 8,
+          "totalFailures": 9,
+          "totalSkipped": 29,
+          "totalTime": 433.03399999999976,
+          "timestamp": "2026-01-05T16:20:17.713127",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
