@@ -1,0 +1,35 @@
+{
+  "system_info": {
+    "contextPath": "http://web:8080",
+    "userAgent": "curl/7.64.0",
+    "calendar": "iso8601",
+    "dateFormat": "yyyy-mm-dd",
+    "serverDate": "2026-01-06T14:10:48.724",
+    "serverTimeZoneId": "GMT",
+    "serverTimeZoneDisplayName": "Greenwich Mean Time",
+    "lastAnalyticsTableSuccess": "2025-01-08T15:25:20.028",
+    "intervalSinceLastAnalyticsTableSuccess": "8710 h, 45 m, 28 s",
+    "lastAnalyticsTableRuntime": "00:01:47.305",
+    "lastSystemMonitoringSuccess": "2019-03-26T17:07:15.418",
+    "lastAnalyticsTablePartitionSuccess": "1970-01-01T00:00:00.000",
+    "intervalSinceLastAnalyticsTablePartitionSuccess": "491030 h, 10 m, 48 s",
+    "lastAnalyticsTablePartitionRuntime": "",
+    "databaseInfo": {
+      "spatialSupport": true,
+      "time": "2026-01-06T14:10:48.724"
+    },
+    "version": "2.43-SNAPSHOT",
+    "revision": "01b9ab5",
+    "buildTime": "2026-01-06T14:06:10.000",
+    "encryption": false,
+    "emailConfigured": false,
+    "redisEnabled": false,
+    "systemId": "eed3d451-4ff5-4193-b951-ffcc68954299",
+    "systemName": "DHIS 2 Demo - Sierra Leone",
+    "systemMetadataVersion": "",
+    "instanceBaseUrl": "http://web:8080",
+    "isMetadataVersionEnabled": true,
+    "lastMetadataVersionSyncAttempt": "1970-01-01T00:00:00.000"
+  },
+  "results": {}
+}
