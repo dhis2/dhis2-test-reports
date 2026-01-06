@@ -794,6 +794,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-01-06_19-07-15_cbbd120": {
+      "buildTime": "2026-01-06T19:07:15.000",
+      "revision": "cbbd120",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 73,
+          "totalTests": 408,
+          "totalErrors": 5,
+          "totalFailures": 9,
+          "totalSkipped": 27,
+          "totalTime": 440.26,
+          "timestamp": "2026-01-06T19:20:44.868706",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
