@@ -874,6 +874,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-01-07_12-57-56_fee6946": {
+      "buildTime": "2026-01-07T12:57:56.000",
+      "revision": "fee6946",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 73,
+          "totalTests": 408,
+          "totalErrors": 4,
+          "totalFailures": 7,
+          "totalSkipped": 27,
+          "totalTime": 435.635,
+          "timestamp": "2026-01-07T13:10:59.967512",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
