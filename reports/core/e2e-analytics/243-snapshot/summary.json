@@ -1386,6 +1386,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-01-20_12-45-48_acaf852": {
+      "buildTime": "2026-01-20T12:45:48.000",
+      "revision": "acaf852",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 75,
+          "totalTests": 418,
+          "totalErrors": 0,
+          "totalFailures": 0,
+          "totalSkipped": 31,
+          "totalTime": 439.40000000000015,
+          "timestamp": "2026-01-20T12:58:45.412860",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
