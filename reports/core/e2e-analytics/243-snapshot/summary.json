@@ -1578,6 +1578,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-02-03_09-43-00_de73328": {
+      "buildTime": "2026-02-03T09:43:00.000",
+      "revision": "de73328",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 77,
+          "totalTests": 438,
+          "totalErrors": 0,
+          "totalFailures": 0,
+          "totalSkipped": 31,
+          "totalTime": 456.7420000000002,
+          "timestamp": "2026-02-03T09:56:03.730437",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
