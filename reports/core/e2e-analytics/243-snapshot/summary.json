@@ -1610,6 +1610,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-02-06_10-06-50_ebeb4cc": {
+      "buildTime": "2026-02-06T10:06:50.000",
+      "revision": "ebeb4cc",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 77,
+          "totalTests": 440,
+          "totalErrors": 14,
+          "totalFailures": 16,
+          "totalSkipped": 31,
+          "totalTime": 459.0090000000002,
+          "timestamp": "2026-02-06T10:20:04.353397",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
