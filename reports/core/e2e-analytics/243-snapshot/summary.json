@@ -1882,6 +1882,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-02-11_13-58-16_ad35ca4": {
+      "buildTime": "2026-02-11T13:58:16.000",
+      "revision": "ad35ca4",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 28,
+          "totalTests": 205,
+          "totalErrors": 0,
+          "totalFailures": 0,
+          "totalSkipped": 3,
+          "totalTime": 321.56999999999994,
+          "timestamp": "2026-02-11T14:09:23.873188",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
