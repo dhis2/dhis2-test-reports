@@ -3,6 +3,9 @@
     "e2e-analytics": {
       "243-snapshot": {
         "summary": "summary.json"
+      },
+      "244-snapshot": {
+        "summary": "summary.json"
       }
     }
   }
