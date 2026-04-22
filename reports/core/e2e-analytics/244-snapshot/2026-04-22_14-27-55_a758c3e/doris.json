@@ -1,0 +1,287 @@
+{
+  "system_info": {
+    "contextPath": "http://web:8080",
+    "userAgent": "curl/7.64.0",
+    "calendar": "iso8601",
+    "dateFormat": "yyyy-mm-dd",
+    "serverDate": "2026-04-22T14:32:57.476",
+    "serverTimeZoneId": "GMT",
+    "sessionTimeout": 3600,
+    "serverTimeZoneDisplayName": "Greenwich Mean Time",
+    "lastAnalyticsTableSuccess": "2025-01-08T15:25:20.028",
+    "intervalSinceLastAnalyticsTableSuccess": "11255 h, 7 m, 37 s",
+    "lastAnalyticsTableRuntime": "00:01:47.305",
+    "lastSystemMonitoringSuccess": "2019-03-26T17:07:15.418",
+    "lastAnalyticsTablePartitionSuccess": "1970-01-01T00:00:00.000",
+    "intervalSinceLastAnalyticsTablePartitionSuccess": "493574 h, 32 m, 57 s",
+    "lastAnalyticsTablePartitionRuntime": "",
+    "databaseInfo": {
+      "spatialSupport": true,
+      "time": "2026-04-22T14:32:57.477"
+    },
+    "capability": {
+      "analyticsTotalCounts": true
+    },
+    "version": "2.44-SNAPSHOT",
+    "revision": "a758c3e",
+    "buildTime": "2026-04-22T14:27:55.000",
+    "encryption": false,
+    "emailConfigured": false,
+    "redisEnabled": false,
+    "systemId": "eed3d451-4ff5-4193-b951-ffcc68954299",
+    "systemName": "DHIS 2 Demo - Sierra Leone",
+    "systemMetadataVersion": "",
+    "instanceBaseUrl": "http://web:8080",
+    "isMetadataVersionEnabled": true,
+    "lastMetadataVersionSyncAttempt": "1970-01-01T00:00:00.000"
+  },
+  "results": {
+    "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest": {
+      "name": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+      "time": 7.47,
+      "tests": 15,
+      "errors": 0,
+      "skipped": 0,
+      "failures": 0,
+      "properties": {
+        "java.specification.version": "17",
+        "user.admin.password": "district",
+        "sun.jnu.encoding": "UTF-8",
+        "test.cleanup": "false",
+        "java.class.path": "/target/test-classes:/target/classes:/root/.m2/repository/com/nimbusds/nimbus-jose-jwt/10.9/nimbus-jose-jwt-10.9.jar:/root/.m2/repository/org/jboss/aerogear/aerogear-otp-java/1.0.0/aerogear-otp-java-1.0.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.2/jackson-databind-2.21.2.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-wiser/1.2/subethasmtp-wiser-1.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-smtp/1.2/subethasmtp-smtp-1.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1/commons-logging-1.1.jar:/root/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar:/root/.m2/repository/logkit/logkit/1.0.1/logkit-1.0.1.jar:/root/.m2/repository/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.jar:/root/.m2/repository/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar:/root/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar:/root/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/root/.m2/repository/org/springframework/spring-web/7.0.7/spring-web-7.0.7.jar:/root/.m2/repository/org/springframework/spring-beans/7.0.7/spring-beans-7.0.7.jar:/root/.m2/repository/org/springframework/spring-core/7.0.7/spring-core-7.0.7.jar:/root/.m2/repository/io/micrometer/micrometer-observation/1.16.5/micrometer-observation-1.16.5.jar:/root/.m2/repository/io/micrometer/micrometer-commons/1.16.5/micrometer-commons-1.16.5.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.4/log4j-api-2.25.4.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-core/2.25.4/log4j-core-2.25.4.jar:/root/.m2/repository/io/rest-assured/rest-assured/5.5.6/rest-assured-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/root/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/root/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/root/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/root/.m2/repository/io/rest-assured/xml-path/5.5.6/xml-path-5.5.6.jar:/root/.m2/repository/io/rest-assured/json-path/5.5.6/json-path-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/root/.m2/repository/io/rest-assured/rest-assured-common/5.5.6/rest-assured-common-5.5.6.jar:/root/.m2/repository/org/hisp/dhis/json-tree/1.8.1/json-tree-1.8.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter/6.0.3/junit-jupiter-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/6.0.3/junit-jupiter-engine-6.0.3.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/6.0.3/junit-platform-engine-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/6.0.3/junit-jupiter-params-6.0.3.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/6.0.3/junit-jupiter-api-6.0.3.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/6.0.3/junit-platform-commons-6.0.3.jar:/root/.m2/repository/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.47.0/error_prone_annotations-2.47.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/root/.m2/repository/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar:/root/.m2/repository/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar:/root/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar:/root/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/root/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/root/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/root/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/org/aeonbits/owner/owner/1.0.12/owner-1.0.12.jar:/root/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/root/.m2/repository/com/jayway/jsonpath/json-path/3.0.0/json-path-3.0.0.jar:/root/.m2/repository/net/minidev/json-smart/2.6.0/json-smart-2.6.0.jar:/root/.m2/repository/net/minidev/accessors-smart/2.6.0/accessors-smart-2.6.0.jar:/root/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/root/.m2/repository/org/awaitility/awaitility/4.3.0/awaitility-4.3.0.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-java/4.43.0/selenium-java-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-api/4.43.0/selenium-api-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.43.0/selenium-chrome-driver-4.43.0.jar:/root/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.43.0/selenium-chromium-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-json/4.43.0/selenium-json-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.43.0/selenium-manager-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v145/4.43.0/selenium-devtools-v145-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v146/4.43.0/selenium-devtools-v146-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.43.0/selenium-devtools-v147-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.43.0/selenium-edge-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.43.0/selenium-firefox-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-http/4.43.0/selenium-http-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.43.0/selenium-ie-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.43.0/selenium-remote-driver-4.43.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api/1.60.1/opentelemetry-api-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-context/1.60.1/opentelemetry-context-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-common/1.60.1/opentelemetry-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.60.1/opentelemetry-exporter-logging-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.60.1/opentelemetry-sdk-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.60.1/opentelemetry-sdk-extension-autoconfigure-spi-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.60.1/opentelemetry-sdk-extension-autoconfigure-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.60.1/opentelemetry-sdk-trace-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.60.1/opentelemetry-sdk-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.60.1/opentelemetry-sdk-metrics-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.60.1/opentelemetry-sdk-logs-1.60.1.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.18.8-jdk5/byte-buddy-1.18.8-jdk5.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-os/4.43.0/selenium-os-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.43.0/selenium-safari-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-support/4.43.0/selenium-support-4.43.0.jar:/root/.m2/repository/org/slf4j/slf4j-simple/2.0.17/slf4j-simple-2.0.17.jar:/root/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.6.1/httpclient5-5.6.1.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.4/httpcore5-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.4/httpcore5-h2-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/fluent-hc/4.5.14/fluent-hc-4.5.14.jar:/root/.m2/repository/commons-io/commons-io/2.21.0/commons-io-2.21.0.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:",
+        "java.vm.vendor": "Oracle Corporation",
+        "sun.arch.data.model": "64",
+        "java.vendor.url": "https://java.oracle.com/",
+        "user.timezone": "Etc/UTC",
+        "os.name": "Linux",
+        "java.vm.specification.version": "17",
+        "sun.java.launcher": "SUN_STANDARD",
+        "sun.boot.library.path": "/usr/local/openjdk-17/lib",
+        "sun.java.command": "/target/surefire/surefirebooter-20260422143336145_3.jar /target/surefire 2026-04-22T14-33-35_313-jvmRun1 surefire-20260422143336145_1tmp surefire_0-20260422143336145_2tmp",
+        "jdk.debug": "release",
+        "surefire.test.class.path": "/target/test-classes:/target/classes:/root/.m2/repository/com/nimbusds/nimbus-jose-jwt/10.9/nimbus-jose-jwt-10.9.jar:/root/.m2/repository/org/jboss/aerogear/aerogear-otp-java/1.0.0/aerogear-otp-java-1.0.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.2/jackson-databind-2.21.2.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-wiser/1.2/subethasmtp-wiser-1.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-smtp/1.2/subethasmtp-smtp-1.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1/commons-logging-1.1.jar:/root/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar:/root/.m2/repository/logkit/logkit/1.0.1/logkit-1.0.1.jar:/root/.m2/repository/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.jar:/root/.m2/repository/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar:/root/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar:/root/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/root/.m2/repository/org/springframework/spring-web/7.0.7/spring-web-7.0.7.jar:/root/.m2/repository/org/springframework/spring-beans/7.0.7/spring-beans-7.0.7.jar:/root/.m2/repository/org/springframework/spring-core/7.0.7/spring-core-7.0.7.jar:/root/.m2/repository/io/micrometer/micrometer-observation/1.16.5/micrometer-observation-1.16.5.jar:/root/.m2/repository/io/micrometer/micrometer-commons/1.16.5/micrometer-commons-1.16.5.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.4/log4j-api-2.25.4.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-core/2.25.4/log4j-core-2.25.4.jar:/root/.m2/repository/io/rest-assured/rest-assured/5.5.6/rest-assured-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/root/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/root/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/root/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/root/.m2/repository/io/rest-assured/xml-path/5.5.6/xml-path-5.5.6.jar:/root/.m2/repository/io/rest-assured/json-path/5.5.6/json-path-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/root/.m2/repository/io/rest-assured/rest-assured-common/5.5.6/rest-assured-common-5.5.6.jar:/root/.m2/repository/org/hisp/dhis/json-tree/1.8.1/json-tree-1.8.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter/6.0.3/junit-jupiter-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/6.0.3/junit-jupiter-engine-6.0.3.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/6.0.3/junit-platform-engine-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/6.0.3/junit-jupiter-params-6.0.3.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/6.0.3/junit-jupiter-api-6.0.3.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/6.0.3/junit-platform-commons-6.0.3.jar:/root/.m2/repository/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.47.0/error_prone_annotations-2.47.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/root/.m2/repository/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar:/root/.m2/repository/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar:/root/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar:/root/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/root/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/root/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/root/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/org/aeonbits/owner/owner/1.0.12/owner-1.0.12.jar:/root/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/root/.m2/repository/com/jayway/jsonpath/json-path/3.0.0/json-path-3.0.0.jar:/root/.m2/repository/net/minidev/json-smart/2.6.0/json-smart-2.6.0.jar:/root/.m2/repository/net/minidev/accessors-smart/2.6.0/accessors-smart-2.6.0.jar:/root/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/root/.m2/repository/org/awaitility/awaitility/4.3.0/awaitility-4.3.0.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-java/4.43.0/selenium-java-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-api/4.43.0/selenium-api-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.43.0/selenium-chrome-driver-4.43.0.jar:/root/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.43.0/selenium-chromium-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-json/4.43.0/selenium-json-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.43.0/selenium-manager-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v145/4.43.0/selenium-devtools-v145-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v146/4.43.0/selenium-devtools-v146-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.43.0/selenium-devtools-v147-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.43.0/selenium-edge-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.43.0/selenium-firefox-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-http/4.43.0/selenium-http-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.43.0/selenium-ie-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.43.0/selenium-remote-driver-4.43.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api/1.60.1/opentelemetry-api-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-context/1.60.1/opentelemetry-context-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-common/1.60.1/opentelemetry-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.60.1/opentelemetry-exporter-logging-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.60.1/opentelemetry-sdk-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.60.1/opentelemetry-sdk-extension-autoconfigure-spi-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.60.1/opentelemetry-sdk-extension-autoconfigure-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.60.1/opentelemetry-sdk-trace-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.60.1/opentelemetry-sdk-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.60.1/opentelemetry-sdk-metrics-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.60.1/opentelemetry-sdk-logs-1.60.1.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.18.8-jdk5/byte-buddy-1.18.8-jdk5.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-os/4.43.0/selenium-os-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.43.0/selenium-safari-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-support/4.43.0/selenium-support-4.43.0.jar:/root/.m2/repository/org/slf4j/slf4j-simple/2.0.17/slf4j-simple-2.0.17.jar:/root/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.6.1/httpclient5-5.6.1.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.4/httpcore5-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.4/httpcore5-h2-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/fluent-hc/4.5.14/fluent-hc-4.5.14.jar:/root/.m2/repository/commons-io/commons-io/2.21.0/commons-io-2.21.0.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:",
+        "sun.cpu.endian": "little",
+        "user.home": "/root",
+        "user.language": "en",
+        "java.specification.vendor": "Oracle Corporation",
+        "java.version.date": "2021-09-14",
+        "java.home": "/usr/local/openjdk-17",
+        "file.separator": "/",
+        "basedir": "/",
+        "java.vm.compressedOopsMode": "Zero based",
+        "line.separator": "\n",
+        "java.specification.name": "Java Platform API Specification",
+        "java.vm.specification.vendor": "Oracle Corporation",
+        "analytics.api.query.params": "skipTrackedEntities=false&skipOutliers=true",
+        "surefire.real.class.path": "/target/surefire/surefirebooter-20260422143336145_3.jar",
+        "rp.enable": "true",
+        "sun.management.compiler": "HotSpot 64-Bit Tiered Compilers",
+        "java.runtime.version": "17+35-2724",
+        "user.name": "root",
+        "dhis2.analytics.datasource": "doris",
+        "path.separator": ":",
+        "os.version": "6.8.0-1044-azure",
+        "rp.attributes": "version:master",
+        "java.runtime.name": "OpenJDK Runtime Environment",
+        "file.encoding": "UTF-8",
+        "rp.launch": "api_test_master",
+        "java.vm.name": "OpenJDK 64-Bit Server VM",
+        "localRepository": "/root/.m2/repository",
+        "instance.url": "http://web:8080/api",
+        "java.vendor.url.bug": "https://bugreport.java.com/bugreport/",
+        "java.io.tmpdir": "/tmp",
+        "user.admin.username": "admin",
+        "java.version": "17",
+        "user.dir": "/",
+        "os.arch": "amd64",
+        "java.vm.specification.name": "Java Virtual Machine Specification",
+        "test.track_called_endpoints": "true",
+        "native.encoding": "UTF-8",
+        "java.library.path": "/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib",
+        "java.vm.info": "mixed mode, sharing",
+        "java.vendor": "Oracle Corporation",
+        "java.vm.version": "17+35-2724",
+        "sun.io.unicode.encoding": "UnicodeLittle",
+        "java.class.version": "61.0"
+      },
+      "testcases": [
+        {
+          "name": "testDataItemsFiltersExistingOptionSetId",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.407
+        },
+        {
+          "name": "testDataItems_PROGRAM_DATA_ELEMENT_OPTION_withProgramDataElementIdFilter",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.11
+        },
+        {
+          "name": "testDataItems_PROGRAM_ATTRIBUTE_OPTION_withInvalidProgramAttributeIdFilter",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.266
+        },
+        {
+          "name": "testDataItems_PROGRAM_DATA_ELEMENT_OPTION",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.192
+        },
+        {
+          "name": "testDataItemsDoesNotContainOptionSets",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.447
+        },
+        {
+          "name": "testDataItems_PROGRAM_DATA_ELEMENT_OPTION_withInvalidProgramDataElementIdFilter",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 4.287
+        },
+        {
+          "name": "testDataItems_PROGRAM_DATA_ELEMENT_withProgramDataElementIdFilter",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.15
+        },
+        {
+          "name": "testDataItems_PROGRAM_ATTRIBUTE_OPTION_withProgramAttributeIdFilter",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.079
+        },
+        {
+          "name": "testDataItems_PROGRAM_ATTRIBUTE_OPTION_and_PROGRAM_DATA_ELEMENT_OPTION",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.208
+        },
+        {
+          "name": "testDataItems_PROGRAM_ATTRIBUTE_OPTION",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.106
+        },
+        {
+          "name": "testDataItemsShortNameOption_PROGRAM_DATA_ELEMENT_OPTION",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.079
+        },
+        {
+          "name": "testDataItems_PROGRAM_ATTRIBUTE_OPTION_withIdFilter",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.105
+        },
+        {
+          "name": "testDataItems_PROGRAM_DATA_ELEMENT_OPTION_withProgramDataElementIdEqFilter",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.076
+        },
+        {
+          "name": "testDataItemsFiltersNonExistingOptionSetId",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.092
+        },
+        {
+          "name": "testDataItemsContainsOptionSetId",
+          "classname": "org.hisp.dhis.analytics.dataitems.DataItemsAnalyticsTest",
+          "time": 0.232
+        }
+      ]
+    },
+    "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest": {
+      "name": "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest",
+      "time": 5.622,
+      "tests": 6,
+      "errors": 0,
+      "skipped": 0,
+      "failures": 0,
+      "properties": {
+        "java.specification.version": "17",
+        "user.admin.password": "district",
+        "sun.jnu.encoding": "UTF-8",
+        "test.cleanup": "false",
+        "java.class.path": "/target/test-classes:/target/classes:/root/.m2/repository/com/nimbusds/nimbus-jose-jwt/10.9/nimbus-jose-jwt-10.9.jar:/root/.m2/repository/org/jboss/aerogear/aerogear-otp-java/1.0.0/aerogear-otp-java-1.0.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.2/jackson-databind-2.21.2.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-wiser/1.2/subethasmtp-wiser-1.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-smtp/1.2/subethasmtp-smtp-1.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1/commons-logging-1.1.jar:/root/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar:/root/.m2/repository/logkit/logkit/1.0.1/logkit-1.0.1.jar:/root/.m2/repository/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.jar:/root/.m2/repository/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar:/root/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar:/root/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/root/.m2/repository/org/springframework/spring-web/7.0.7/spring-web-7.0.7.jar:/root/.m2/repository/org/springframework/spring-beans/7.0.7/spring-beans-7.0.7.jar:/root/.m2/repository/org/springframework/spring-core/7.0.7/spring-core-7.0.7.jar:/root/.m2/repository/io/micrometer/micrometer-observation/1.16.5/micrometer-observation-1.16.5.jar:/root/.m2/repository/io/micrometer/micrometer-commons/1.16.5/micrometer-commons-1.16.5.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.4/log4j-api-2.25.4.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-core/2.25.4/log4j-core-2.25.4.jar:/root/.m2/repository/io/rest-assured/rest-assured/5.5.6/rest-assured-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/root/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/root/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/root/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/root/.m2/repository/io/rest-assured/xml-path/5.5.6/xml-path-5.5.6.jar:/root/.m2/repository/io/rest-assured/json-path/5.5.6/json-path-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/root/.m2/repository/io/rest-assured/rest-assured-common/5.5.6/rest-assured-common-5.5.6.jar:/root/.m2/repository/org/hisp/dhis/json-tree/1.8.1/json-tree-1.8.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter/6.0.3/junit-jupiter-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/6.0.3/junit-jupiter-engine-6.0.3.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/6.0.3/junit-platform-engine-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/6.0.3/junit-jupiter-params-6.0.3.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/6.0.3/junit-jupiter-api-6.0.3.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/6.0.3/junit-platform-commons-6.0.3.jar:/root/.m2/repository/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.47.0/error_prone_annotations-2.47.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/root/.m2/repository/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar:/root/.m2/repository/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar:/root/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar:/root/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/root/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/root/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/root/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/org/aeonbits/owner/owner/1.0.12/owner-1.0.12.jar:/root/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/root/.m2/repository/com/jayway/jsonpath/json-path/3.0.0/json-path-3.0.0.jar:/root/.m2/repository/net/minidev/json-smart/2.6.0/json-smart-2.6.0.jar:/root/.m2/repository/net/minidev/accessors-smart/2.6.0/accessors-smart-2.6.0.jar:/root/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/root/.m2/repository/org/awaitility/awaitility/4.3.0/awaitility-4.3.0.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-java/4.43.0/selenium-java-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-api/4.43.0/selenium-api-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.43.0/selenium-chrome-driver-4.43.0.jar:/root/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.43.0/selenium-chromium-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-json/4.43.0/selenium-json-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.43.0/selenium-manager-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v145/4.43.0/selenium-devtools-v145-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v146/4.43.0/selenium-devtools-v146-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.43.0/selenium-devtools-v147-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.43.0/selenium-edge-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.43.0/selenium-firefox-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-http/4.43.0/selenium-http-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.43.0/selenium-ie-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.43.0/selenium-remote-driver-4.43.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api/1.60.1/opentelemetry-api-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-context/1.60.1/opentelemetry-context-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-common/1.60.1/opentelemetry-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.60.1/opentelemetry-exporter-logging-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.60.1/opentelemetry-sdk-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.60.1/opentelemetry-sdk-extension-autoconfigure-spi-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.60.1/opentelemetry-sdk-extension-autoconfigure-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.60.1/opentelemetry-sdk-trace-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.60.1/opentelemetry-sdk-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.60.1/opentelemetry-sdk-metrics-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.60.1/opentelemetry-sdk-logs-1.60.1.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.18.8-jdk5/byte-buddy-1.18.8-jdk5.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-os/4.43.0/selenium-os-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.43.0/selenium-safari-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-support/4.43.0/selenium-support-4.43.0.jar:/root/.m2/repository/org/slf4j/slf4j-simple/2.0.17/slf4j-simple-2.0.17.jar:/root/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.6.1/httpclient5-5.6.1.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.4/httpcore5-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.4/httpcore5-h2-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/fluent-hc/4.5.14/fluent-hc-4.5.14.jar:/root/.m2/repository/commons-io/commons-io/2.21.0/commons-io-2.21.0.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:",
+        "java.vm.vendor": "Oracle Corporation",
+        "sun.arch.data.model": "64",
+        "java.vendor.url": "https://java.oracle.com/",
+        "user.timezone": "Etc/UTC",
+        "os.name": "Linux",
+        "java.vm.specification.version": "17",
+        "sun.java.launcher": "SUN_STANDARD",
+        "sun.boot.library.path": "/usr/local/openjdk-17/lib",
+        "sun.java.command": "/target/surefire/surefirebooter-20260422143336145_3.jar /target/surefire 2026-04-22T14-33-35_313-jvmRun1 surefire-20260422143336145_1tmp surefire_0-20260422143336145_2tmp",
+        "jdk.debug": "release",
+        "surefire.test.class.path": "/target/test-classes:/target/classes:/root/.m2/repository/com/nimbusds/nimbus-jose-jwt/10.9/nimbus-jose-jwt-10.9.jar:/root/.m2/repository/org/jboss/aerogear/aerogear-otp-java/1.0.0/aerogear-otp-java-1.0.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.2/jackson-databind-2.21.2.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-wiser/1.2/subethasmtp-wiser-1.2.jar:/root/.m2/repository/org/subethamail/subethasmtp-smtp/1.2/subethasmtp-smtp-1.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1/commons-logging-1.1.jar:/root/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar:/root/.m2/repository/logkit/logkit/1.0.1/logkit-1.0.1.jar:/root/.m2/repository/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.jar:/root/.m2/repository/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar:/root/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar:/root/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/root/.m2/repository/org/springframework/spring-web/7.0.7/spring-web-7.0.7.jar:/root/.m2/repository/org/springframework/spring-beans/7.0.7/spring-beans-7.0.7.jar:/root/.m2/repository/org/springframework/spring-core/7.0.7/spring-core-7.0.7.jar:/root/.m2/repository/io/micrometer/micrometer-observation/1.16.5/micrometer-observation-1.16.5.jar:/root/.m2/repository/io/micrometer/micrometer-commons/1.16.5/micrometer-commons-1.16.5.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.4/log4j-api-2.25.4.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-core/2.25.4/log4j-core-2.25.4.jar:/root/.m2/repository/io/rest-assured/rest-assured/5.5.6/rest-assured-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/root/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/root/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/root/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/root/.m2/repository/io/rest-assured/xml-path/5.5.6/xml-path-5.5.6.jar:/root/.m2/repository/io/rest-assured/json-path/5.5.6/json-path-5.5.6.jar:/root/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/root/.m2/repository/io/rest-assured/rest-assured-common/5.5.6/rest-assured-common-5.5.6.jar:/root/.m2/repository/org/hisp/dhis/json-tree/1.8.1/json-tree-1.8.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter/6.0.3/junit-jupiter-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/6.0.3/junit-jupiter-engine-6.0.3.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/6.0.3/junit-platform-engine-6.0.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/6.0.3/junit-jupiter-params-6.0.3.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/6.0.3/junit-jupiter-api-6.0.3.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/6.0.3/junit-platform-commons-6.0.3.jar:/root/.m2/repository/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.47.0/error_prone_annotations-2.47.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/root/.m2/repository/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar:/root/.m2/repository/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar:/root/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar:/root/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/root/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/root/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/root/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/org/aeonbits/owner/owner/1.0.12/owner-1.0.12.jar:/root/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/root/.m2/repository/com/jayway/jsonpath/json-path/3.0.0/json-path-3.0.0.jar:/root/.m2/repository/net/minidev/json-smart/2.6.0/json-smart-2.6.0.jar:/root/.m2/repository/net/minidev/accessors-smart/2.6.0/accessors-smart-2.6.0.jar:/root/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/root/.m2/repository/org/awaitility/awaitility/4.3.0/awaitility-4.3.0.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-java/4.43.0/selenium-java-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-api/4.43.0/selenium-api-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.43.0/selenium-chrome-driver-4.43.0.jar:/root/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.43.0/selenium-chromium-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-json/4.43.0/selenium-json-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.43.0/selenium-manager-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v145/4.43.0/selenium-devtools-v145-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v146/4.43.0/selenium-devtools-v146-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.43.0/selenium-devtools-v147-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.43.0/selenium-edge-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.43.0/selenium-firefox-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-http/4.43.0/selenium-http-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.43.0/selenium-ie-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.43.0/selenium-remote-driver-4.43.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api/1.60.1/opentelemetry-api-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-context/1.60.1/opentelemetry-context-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-common/1.60.1/opentelemetry-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.60.1/opentelemetry-exporter-logging-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.60.1/opentelemetry-sdk-common-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.60.1/opentelemetry-sdk-extension-autoconfigure-spi-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.60.1/opentelemetry-sdk-extension-autoconfigure-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.60.1/opentelemetry-sdk-trace-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.60.1/opentelemetry-sdk-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.60.1/opentelemetry-sdk-metrics-1.60.1.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.60.1/opentelemetry-sdk-logs-1.60.1.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.18.8-jdk5/byte-buddy-1.18.8-jdk5.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-os/4.43.0/selenium-os-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.43.0/selenium-safari-driver-4.43.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-support/4.43.0/selenium-support-4.43.0.jar:/root/.m2/repository/org/slf4j/slf4j-simple/2.0.17/slf4j-simple-2.0.17.jar:/root/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.6.1/httpclient5-5.6.1.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.4/httpcore5-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.4/httpcore5-h2-5.4.jar:/root/.m2/repository/org/apache/httpcomponents/fluent-hc/4.5.14/fluent-hc-4.5.14.jar:/root/.m2/repository/commons-io/commons-io/2.21.0/commons-io-2.21.0.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:",
+        "sun.cpu.endian": "little",
+        "user.home": "/root",
+        "user.language": "en",
+        "java.specification.vendor": "Oracle Corporation",
+        "java.version.date": "2021-09-14",
+        "java.home": "/usr/local/openjdk-17",
+        "file.separator": "/",
+        "basedir": "/",
+        "java.vm.compressedOopsMode": "Zero based",
+        "line.separator": "\n",
+        "java.specification.name": "Java Platform API Specification",
+        "java.vm.specification.vendor": "Oracle Corporation",
+        "analytics.api.query.params": "skipTrackedEntities=false&skipOutliers=true",
+        "surefire.real.class.path": "/target/surefire/surefirebooter-20260422143336145_3.jar",
+        "rp.enable": "true",
+        "sun.management.compiler": "HotSpot 64-Bit Tiered Compilers",
+        "java.runtime.version": "17+35-2724",
+        "user.name": "root",
+        "dhis2.analytics.datasource": "doris",
+        "path.separator": ":",
+        "os.version": "6.8.0-1044-azure",
+        "rp.attributes": "version:master",
+        "java.runtime.name": "OpenJDK Runtime Environment",
+        "file.encoding": "UTF-8",
+        "rp.launch": "api_test_master",
+        "java.vm.name": "OpenJDK 64-Bit Server VM",
+        "localRepository": "/root/.m2/repository",
+        "instance.url": "http://web:8080/api",
+        "java.vendor.url.bug": "https://bugreport.java.com/bugreport/",
+        "java.io.tmpdir": "/tmp",
+        "user.admin.username": "admin",
+        "java.version": "17",
+        "user.dir": "/",
+        "os.arch": "amd64",
+        "java.vm.specification.name": "Java Virtual Machine Specification",
+        "test.track_called_endpoints": "true",
+        "native.encoding": "UTF-8",
+        "java.library.path": "/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib",
+        "java.vm.info": "mixed mode, sharing",
+        "java.vendor": "Oracle Corporation",
+        "java.vm.version": "17+35-2724",
+        "sun.io.unicode.encoding": "UnicodeLittle",
+        "java.class.version": "61.0"
+      },
+      "testcases": [
+        {
+          "name": "testEnrollmentsQueryAnalyticsWhenAnalyticsTablesAreMissing",
+          "classname": "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest",
+          "time": 0.759
+        },
+        {
+          "name": "testAggregateAnalyticsWhenAnalyticsTablesAreMissing",
+          "classname": "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest",
+          "time": 1.635
+        },
+        {
+          "name": "testOutliersAnalyticsWhenOutliersDataAreMissing",
+          "classname": "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest",
+          "time": 0.308
+        },
+        {
+          "name": "testEventsAggregateAnalyticsWhenAnalyticsTablesAreMissing",
+          "classname": "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest",
+          "time": 0.214
+        },
+        {
+          "name": "testEventsQueryAnalyticsWhenAnalyticsTablesAreMissing",
+          "classname": "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest",
+          "time": 0.29
+        },
+        {
+          "name": "queryWithProgramAndEnrollmentDateAndInvalidEnrollmentOffset",
+          "classname": "org.hisp.dhis.analytics.NoAnalyticsTablesErrorsScenariosTest",
+          "time": 0.311
+        }
+      ]
+    }
+  }
+}
