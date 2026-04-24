@@ -528,6 +528,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-04-24_10-27-29_affcc99": {
+      "buildTime": "2026-04-24T10:27:29.000",
+      "revision": "affcc99",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 78,
+          "totalTests": 491,
+          "totalErrors": 3,
+          "totalFailures": 5,
+          "totalSkipped": 30,
+          "totalTime": 486.48199999999986,
+          "timestamp": "2026-04-24T10:41:26.488999",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
