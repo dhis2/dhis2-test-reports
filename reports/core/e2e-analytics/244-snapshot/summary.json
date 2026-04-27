@@ -656,6 +656,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-04-27_10-23-14_fd123db": {
+      "buildTime": "2026-04-27T10:23:14.000",
+      "revision": "fd123db",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 78,
+          "totalTests": 493,
+          "totalErrors": 0,
+          "totalFailures": 3,
+          "totalSkipped": 29,
+          "totalTime": 429.313,
+          "timestamp": "2026-04-27T10:40:07.060300",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
