@@ -1312,6 +1312,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-05-11_16-29-10_cab47ee": {
+      "buildTime": "2026-05-11T16:29:10.000",
+      "revision": "cab47ee",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 78,
+          "totalTests": 497,
+          "totalErrors": 0,
+          "totalFailures": 0,
+          "totalSkipped": 29,
+          "totalTime": 481.494,
+          "timestamp": "2026-05-11T16:43:05.882305",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
