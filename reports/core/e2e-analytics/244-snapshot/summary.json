@@ -1552,6 +1552,22 @@
           "outputFile": "clickhouse.json"
         }
       }
+    },
+    "2026-05-12_17-33-31_b6ef97c": {
+      "buildTime": "2026-05-12T17:33:31.000",
+      "revision": "b6ef97c",
+      "dbTypes": {
+        "clickhouse": {
+          "testSuites": 78,
+          "totalTests": 497,
+          "totalErrors": 0,
+          "totalFailures": 21,
+          "totalSkipped": 30,
+          "totalTime": 375.83000000000004,
+          "timestamp": "2026-05-12T17:47:32.002142",
+          "outputFile": "clickhouse.json"
+        }
+      }
     }
   }
 }
