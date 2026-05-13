@@ -1632,6 +1632,22 @@
           "outputFile": "clickhouse.json"
         }
       }
+    },
+    "2026-05-13_08-32-36_86d16f2": {
+      "buildTime": "2026-05-13T08:32:36.000",
+      "revision": "86d16f2",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 78,
+          "totalTests": 497,
+          "totalErrors": 0,
+          "totalFailures": 0,
+          "totalSkipped": 29,
+          "totalTime": 541.7030000000001,
+          "timestamp": "2026-05-13T08:48:06.547642",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
