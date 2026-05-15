@@ -1,13 +1,13 @@
 {
   "core": {
     "e2e-analytics": {
+      "243-snapshot": {
+        "summary": "summary.json"
+      },
       "2431-snapshot": {
         "summary": "summary.json"
       },
       "244-snapshot": {
-        "summary": "summary.json"
-      },
-      "243-snapshot": {
         "summary": "summary.json"
       }
     }
