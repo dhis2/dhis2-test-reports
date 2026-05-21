@@ -2016,6 +2016,22 @@
           "outputFile": "doris.json"
         }
       }
+    },
+    "2026-05-21_09-32-20_5a1cadf": {
+      "buildTime": "2026-05-21T09:32:20.000",
+      "revision": "5a1cadf",
+      "dbTypes": {
+        "doris": {
+          "testSuites": 78,
+          "totalTests": 502,
+          "totalErrors": 0,
+          "totalFailures": 0,
+          "totalSkipped": 29,
+          "totalTime": 487.09999999999985,
+          "timestamp": "2026-05-21T09:46:24.124632",
+          "outputFile": "doris.json"
+        }
+      }
     }
   }
 }
